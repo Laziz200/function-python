@@ -22,10 +22,10 @@ def add_user(users: list[dict]) -> list[dict]:
     return users
 
 def get_users_by_age(users: list[dict], age: int) -> list[dict]:
-    pass
+    return list(filter(lambda user:user['age']==age,users))
 
 def get_users_by_job(users: list[dict], job: str) -> list[dict]:
-    pass
+    return list(filter(lambda user:user['job']==job,users))
 
 def main():
     users = [
@@ -50,9 +50,11 @@ def main():
         elif choice == '2':
             age = int(input("Enter min age: "))
             filtered_users = get_users_by_age(users, age)
+            print(filtered_users)
         elif choice == '3':
-            job = int(input("Enter job: "))
+            job = str(input("Enter job: "))
             filtered_users = get_users_by_job(users, job)
+            print(filtered_users)
         elif choice == '4':
             print_users(users)
         else:
