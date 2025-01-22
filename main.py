@@ -25,7 +25,7 @@ def get_users_by_age(users: list[dict], age: int) -> list[dict]:
     return list(filter(lambda user:user['age']==age,users))
 
 def get_users_by_job(users: list[dict], job: str) -> list[dict]:
-    return list(filter(lambda user:user['job']==job,users))
+    return list(filter(lambda user:user['job']==job.lower(),users))
 
 def main():
     users = [
